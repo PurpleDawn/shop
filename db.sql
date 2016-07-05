@@ -30,3 +30,21 @@ CREATE TABLE shop_goods
     KEY is_on_sale(is_on_sale),
     KEY sort_num(sort_num)
 )ENGINE=MyISAM DEFAULT CHARSET=utf8 COMMENT '商品';
+
+DROP TABLE IF EXISTS shop_category;
+CREATE TABLE shop_category
+(
+    id SMALLINT UNSIGNED NOT NULL AUTO_INCREMENT COMMENT 'id',
+    cat_name VARCHAR(30) NOT NULL COMMENT '分类名称',
+    parent_id SMALLINT UNSIGNED NOT NULL DEFAULT '0' COMMENT '上级分类的ID，0：顶级分类',
+    PRIMARY KEY (id)
+)ENGINE=MyISAM DEFAULT CHARSET=utf8 COMMENT '分类';
+
+DROP TABLE IF EXISTS shop_goods_cat;
+CREATE TABLE shop_goods_cat
+(
+    goods_id MEDIUMINT UNSIGNED NOT NULL COMMENT '商品id',
+    cat_id SMALLINT UNSIGNED NOT NULL COMMENT '分类id',
+    KEY (goods_id),
+    KEY (cat_id)
+)ENGINE=MyISAM DEFAULT CHARSET=utf8 COMMENT '商品分类';
