@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="dataSourceStorageLocal">
+    <data-source name="MySQL - blog@localhost" uuid="ab62fe83-b9de-4854-95aa-26cd60ab872e">
+      <secret-storage>master_key</secret-storage>
+      <user-name>root</user-name>
+      <schema-pattern>blog.*</schema-pattern>
+      <default-schemas>blog.*</default-schemas>
+    </data-source>
+    <data-source name="MySQL - shop@localhost" uuid="67fad49c-c79f-448c-be92-f661c6063287">
+      <secret-storage>master_key</secret-storage>
+      <user-name>root</user-name>
+      <schema-pattern>shop.*</schema-pattern>
+      <default-schemas>shop.*</default-schemas>
+    </data-source>
+  </component>
+</project>
