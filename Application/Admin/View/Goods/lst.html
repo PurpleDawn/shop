@@ -20,7 +20,23 @@
         商品描述：<input type="text" name="goods_desc" size="15" value="<?php echo I('get.goods_desc'); ?>" />
         价格：从<input type="text" name="from" size="15" value="<?php echo I('get.from'); ?>" />
             到<input type="text" name="to" size="15" value="<?php echo I('get.to'); ?>" />
-        <input type="submit" value=" 搜索 " class="button"/>
+        <P>
+            <select name="cat_id">
+                <option value="0">选择分类</option>
+                <?php
+                $catId = I('get.cat_id');
+                foreach ($catData as $v):
+                    if($catId == $v['id'])
+                        $select = 'selected="selected"';
+                    else
+                        $select = "";
+                ?>
+                <option <?php echo $select ?> value="<?php echo $v['id'] ?>"><?php echo str_repeat('-', $v['level'] * 8) . $v['cat_name'] ?></option>
+                <?php endforeach; ?>
+            </select>
+            <input type="submit" value=" 搜索 " class="button"/>
+        </P>
+
     </form>
 </div>
 

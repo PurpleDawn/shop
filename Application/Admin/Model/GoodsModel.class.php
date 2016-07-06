@@ -9,12 +9,23 @@ class GoodsModel extends Model{
     // 定义表单验证规则
     // 第四个参数：什么情况验证：0：字段存在时候验证【默认】 1：必须验证 2：字段存在且值不为空时候验证
     protected $_validate = array(
+        array('cat_id', 'chk_cat_id', '必须选择一个分类', 'callback'),
         array('goods_name', 'require', '商品名称不能为空', 1),
         array('market_price', 'require', '市场价格不能为空', 1),
         array('shop_price', 'require', '本店价格不能为空', 1),
         array('market_price', 'currency', '市场价格必须是货币类型', 1),
         array('shop_price', 'currency', '本店价格必须是货币类型', 1)
     );
+    protected function chk_cat_id($catId){
+        $return = FALSE;
+        foreach($catId as $v){
+            if($v > 0){
+                $return = TRUE;
+                break;
+            }
+        }
+        return $return;
+    }
     // 如果定义了这个函数，TP在添加一个数据之前先调用这个函数
     protected function _before_insert(&$data, $option){
         $data['is_new'] = I('post.is_new', '否');
@@ -80,6 +91,32 @@ class GoodsModel extends Model{
             $where['shop_price'] = array('egt', $from);
         elseif ($to)
             $where['shop_price'] = array('elt', $to);
+        // 商品分类
+        $catId = I('get.cat_id');
+        if($catId){
+            // 先取出这个分类的所有子分类
+            $catModel = D('Category');
+            $children = $catModel->getChildren($catId);
+            // 把分类和子分类放在一起
+            $children[] = $catId;
+            $children = implode(',', $children);
+            // 取出这些分类下的商品ID
+            $gcModel = D('GoodsCat');
+            $goods_id = $gcModel->field('DISTINCT goods_id')->where(array(
+                    'cat_id' => array('in', $children),
+                ))->select();
+            if ($goods_id){
+                // 把二维数组转化成一维数组
+                $_goods_id = array();
+                foreach($goods_id as $v){
+                    $_goods_id[] = $v['goods_id'];
+                }
+                $where['id'] = array('in', $_goods_id);
+            }
+            else
+                // 如果没有满足条件的商品，就加一个不可能取出商品的条件
+                $where['id'] = array('eq', 0);
+        }
         /*************************** 构造翻页用的 limit 变量 ****************************/
         // 取出总的记录数
         $count = $this->where($where)->count();
@@ -163,5 +200,22 @@ class GoodsModel extends Model{
         }
         // 用我们自己过滤的原始数据，覆盖掉表单中TP使用I函数过滤的
         $data['goods_desc'] = removeXSS($_POST['goods_desc']);
+    }
+
+    // 在商品插入到数据之后调用，新的商品id，TP已经放到了$data["id"]里了。
+    protected function _after_insert($data, $option){
+        // 接收用户选择的商品分类的ID
+        $catID = I('post.cat_id');
+        // 生成中间表模型用以下两行都行
+        // $gcModel = D('goods_cat');
+        $gcModel = D('GoodsCat');
+        foreach($catID as $v){
+            if($v == 0)
+                continue;
+            $gcModel->add(array(
+                'goods_id' => $data['id'],
+                'cat_id' => $v,
+            ));
+        }
     }
 }

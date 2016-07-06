@@ -23,6 +23,12 @@ class GoodsController extends Controller{
                 $this->error($error);
             }
         }
+        // 取出所有商品分类
+        $catModel = D('Category');
+        $catData = $catModel->getTree();
+        $this->assign(array(
+            'catData' => $catData,
+        ));
         // 显示表单
         $this->display();
     }
@@ -30,8 +36,13 @@ class GoodsController extends Controller{
     public function lst(){
         $model = D('Goods');
         $data = $model->search(5);
+
+        // 取出所有的商品分类
+        $catModel = D('Category');
+        $catData = $catModel->getTree();
         // 把数据传到页面
         $this->assign(array(
+            'catData' => $catData,
             'data' => $data['data'],
             'page' => $data['page'],
         ));

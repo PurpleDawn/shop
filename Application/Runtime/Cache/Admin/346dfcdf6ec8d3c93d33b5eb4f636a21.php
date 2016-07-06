@@ -31,6 +31,22 @@
         <form action="<?php echo U('add'); ?>" method="post" enctype="multipart/form-data" >
             <table width="90%" id="general-table" align="center">
                 <tr>
+                    <td class="label">所在分类：</td>
+                    <td>
+                        <input type="button" id="btn_add_cat" value="添加一个分类" />
+                        <ul id="cat_ul">
+                            <li>
+                                <select name="cat_id[]">
+                                    <option value="0">选择分类</option>
+                                    <?php foreach ($catData as $v): ?>
+                                    <option value="<?php echo $v['id'] ?>"><?php echo str_repeat('-', $v['level'] * 8) . $v['cat_name'] ?></option>
+                                    <?php endforeach; ?>
+                                </select>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr>
                     <td class="label">Logo</td>
                     <td>
                         <input type="file" name="logo" />
@@ -96,5 +112,10 @@
 <script>
     UM.getEditor("goods_desc", {
         initialFrameWidth : "700px"
+    });
+    $("#btn_add_cat").click(function(){
+        // 把第一个下拉框克隆
+        var newli = $("#cat_ul li").eq(0).clone();
+        $("#cat_ul").append(newli);
     });
 </script>
