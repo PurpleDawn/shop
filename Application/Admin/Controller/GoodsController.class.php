@@ -78,7 +78,18 @@ class GoodsController extends Controller{
         }
         // 先取出要修改的商品的详细信息
         $info = $model->find($id);
+        // 取出所有的商品分类
+        $catModel = D('Category');
+        $catData = $catModel->getTree();
+        // 取出这件商品所在分类
+        $gcModel = D('GoodsCat');
+        $catId = $gcModel->field('cat_id')->where(array(
+            'goods_id' => array('eq', $id),
+        ))->select();
+
         $this->assign(array(
+            'catId' => $catId,
+            'catData' => $catData,
             'info' => $info,
         ));
         $this->display();

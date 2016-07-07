@@ -32,6 +32,24 @@
             <table width="90%" id="general-table" align="center">
                 <input type="hidden" name="id" value="<?php echo $info['id']; ?>"/>
                 <tr>
+                    <td class="label">所在分类：</td>
+                    <td>
+                        <input type="button" id="btn_add_cat" value="添加一个分类" />
+                        <ul id="cat_ul">
+                        <?php foreach ($catId as $k1 => $v1): ?>
+                            <li>
+                                <select name="cat_id[]">
+                                    <option value="0">选择分类</option>
+                                    <?php foreach ($catData as $v): if($v['id'] == $v1['cat_id']) $select = 'selected="select"'; else $select = ""; ?>
+                                    <option <?php echo $select; ?> value="<?php echo $v['id'] ?>"><?php echo str_repeat('-', $v['level'] * 8) . $v['cat_name'] ?></option>
+                                    <?php endforeach; ?>
+                                </select>
+                            </li>
+                        <?php endforeach; ?>
+                        </ul>
+                    </td>
+                </tr>
+                <tr>
                     <td class="label">Logo</td>
                     <td>
                         <input type="file" name="logo" />
@@ -98,5 +116,10 @@
 <script>
     UM.getEditor("goods_desc", {
         initialFrameWidth : "700px"
+    });
+    $("#btn_add_cat").click(function(){
+        // 把第一个下拉框克隆
+        var newli = $("#cat_ul li").eq(0).clone();
+        $("#cat_ul").append(newli);
     });
 </script>

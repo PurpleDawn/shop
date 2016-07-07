@@ -154,9 +154,33 @@ class GoodsModel extends Model{
         unlink('./Public/Uploads/'.$logo['logo']);
         unlink('./Public/Uploads/'.$logo['sm_logo']);
         unlink('./Public/Uploads/'.$logo['mid_logo']);
+        // 删除商品时，将其所对应的商品分类数据也删除
+        $gcModel = D('GoodsCat');
+        $gcModel->where(array(
+            'goods_id' => array('eq', $option['where']['id']),
+        ))->delete();
     }
 
     protected function _before_update(&$data, $option){
+        /************************* 处理商品分类的代码 ***********************/
+        // 接收用户选择的商品分类的ID
+        $catId = I('post.cat_id');
+        // 生成中间表模型用以下两行都行
+        // $gcModel = D('goods_cat');
+        $gcModel = D('GoodsCat');
+        // 先删除原先的数据
+        $gcModel->where(array(
+            'goods_id' => array('eq', $option['where']['id']),
+        ))->delete();
+        foreach($catId as $v){
+            if($v == 0)
+                continue;
+            $gcModel->add(array(
+                'goods_id' => $option['where']['id'], // 商品ID在insert里面保存在$data['id']中，在update里面保存在$option['where']['id']中、
+                'cat_id' => $v,
+            ));
+        }
+        /******************************************************************/
         $data['is_new'] = I('post.is_new', '否');
         $data['is_hot'] = I('post.is_hot', '否');
         $data['is_best'] = I('post.is_best', '否');
@@ -205,11 +229,11 @@ class GoodsModel extends Model{
     // 在商品插入到数据之后调用，新的商品id，TP已经放到了$data["id"]里了。
     protected function _after_insert($data, $option){
         // 接收用户选择的商品分类的ID
-        $catID = I('post.cat_id');
+        $catId = I('post.cat_id');
         // 生成中间表模型用以下两行都行
         // $gcModel = D('goods_cat');
         $gcModel = D('GoodsCat');
-        foreach($catID as $v){
+        foreach($catId as $v){
             if($v == 0)
                 continue;
             $gcModel->add(array(

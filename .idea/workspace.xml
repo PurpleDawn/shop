@@ -5,10 +5,11 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Application/Admin/Controller/GoodsController.class.php" afterPath="$PROJECT_DIR$/Application/Admin/Controller/GoodsController.class.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Application/Admin/Model/GoodsModel.class.php" afterPath="$PROJECT_DIR$/Application/Admin/Model/GoodsModel.class.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Application/Admin/View/Goods/add.html" afterPath="$PROJECT_DIR$/Application/Admin/View/Goods/add.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Application/Admin/View/Goods/lst.html" afterPath="$PROJECT_DIR$/Application/Admin/View/Goods/lst.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Application/Runtime/Cache/Admin/12cf6a5c74297688873998de0720405d.php" afterPath="$PROJECT_DIR$/Application/Runtime/Cache/Admin/12cf6a5c74297688873998de0720405d.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Application/Runtime/Cache/Admin/346dfcdf6ec8d3c93d33b5eb4f636a21.php" afterPath="$PROJECT_DIR$/Application/Runtime/Cache/Admin/346dfcdf6ec8d3c93d33b5eb4f636a21.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Application/Admin/View/Category/lst.html" afterPath="$PROJECT_DIR$/Application/Admin/View/Category/lst.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Application/Admin/View/Goods/edit.html" afterPath="$PROJECT_DIR$/Application/Admin/View/Goods/edit.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Application/Admin/View/Index/menu.html" afterPath="$PROJECT_DIR$/Application/Admin/View/Index/menu.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Application/Runtime/Cache/Admin/5f62cf3ecb66a47dcb1a9b7512abfb3d.php" afterPath="$PROJECT_DIR$/Application/Runtime/Cache/Admin/5f62cf3ecb66a47dcb1a9b7512abfb3d.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Application/Runtime/Cache/Admin/608b0c961c661bd6d45820311b4b75a7.php" afterPath="$PROJECT_DIR$/Application/Runtime/Cache/Admin/608b0c961c661bd6d45820311b4b75a7.php" />
     </list>
     <ignored path="shop.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -60,8 +61,8 @@
       <file leaf-file-name="GoodsController.class.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Application/Admin/Controller/GoodsController.class.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="270">
-              <caret line="30" column="11" selection-start-line="30" selection-start-column="11" selection-end-line="30" selection-end-column="11" />
+            <state relative-caret-position="1563">
+              <caret line="87" column="21" selection-start-line="87" selection-start-column="21" selection-end-line="87" selection-end-column="21" />
               <folding />
             </state>
           </provider>
@@ -71,7 +72,7 @@
         <entry file="file://$PROJECT_DIR$/Application/Admin/Model/GoodsModel.class.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="249">
-              <caret line="100" column="33" selection-start-line="100" selection-start-column="33" selection-end-line="100" selection-end-column="33" />
+              <caret line="169" column="33" selection-start-line="169" selection-start-column="33" selection-end-line="169" selection-end-column="33" />
               <folding />
             </state>
           </provider>
@@ -80,18 +81,18 @@
       <file leaf-file-name="add.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Application/Admin/View/Goods/add.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="465">
-              <caret line="43" column="41" selection-start-line="38" selection-start-column="32" selection-end-line="43" selection-end-column="41" />
+            <state relative-caret-position="2142">
+              <caret line="119" column="7" selection-start-line="115" selection-start-column="4" selection-end-line="119" selection-end-column="7" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="lst.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Application/Admin/View/Goods/lst.html">
+      <file leaf-file-name="edit.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Application/Admin/View/Goods/edit.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="330">
-              <caret line="26" column="38" selection-start-line="26" selection-start-column="38" selection-end-line="26" selection-end-column="38" />
+            <state relative-caret-position="450">
+              <caret line="48" column="63" selection-start-line="48" selection-start-column="63" selection-end-line="48" selection-end-column="63" />
               <folding />
             </state>
           </provider>
@@ -120,20 +121,20 @@
         <option value="$PROJECT_DIR$/Application/Common/Conf/config.php" />
         <option value="$PROJECT_DIR$/Public/umeditor1_2_2-utf8-php/umeditor.config.js" />
         <option value="$PROJECT_DIR$/Application/Common/Common/function.php" />
-        <option value="$PROJECT_DIR$/Application/Admin/View/Index/menu.html" />
         <option value="$PROJECT_DIR$/Public/Admin/Styles/main.css" />
         <option value="$PROJECT_DIR$/ThinkPHP/Library/Think/Page.class.php" />
-        <option value="$PROJECT_DIR$/Application/Admin/View/Goods/edit.html" />
         <option value="$PROJECT_DIR$/README.md" />
         <option value="$PROJECT_DIR$/db.sql" />
-        <option value="$PROJECT_DIR$/Application/Admin/View/Category/lst.html" />
         <option value="$PROJECT_DIR$/Application/Admin/View/Category/add.html" />
         <option value="$PROJECT_DIR$/Application/Admin/Model/CategoryModel.class.php" />
         <option value="$PROJECT_DIR$/Application/Admin/Controller/CategoryController.class.php" />
         <option value="$PROJECT_DIR$/Application/Admin/View/Category/edit.html" />
         <option value="$PROJECT_DIR$/Application/Admin/View/Goods/add.html" />
-        <option value="$PROJECT_DIR$/Application/Admin/Controller/GoodsController.class.php" />
         <option value="$PROJECT_DIR$/Application/Admin/View/Goods/lst.html" />
+        <option value="$PROJECT_DIR$/Application/Admin/View/Index/menu.html" />
+        <option value="$PROJECT_DIR$/Application/Admin/View/Category/lst.html" />
+        <option value="$PROJECT_DIR$/Application/Admin/Controller/GoodsController.class.php" />
+        <option value="$PROJECT_DIR$/Application/Admin/View/Goods/edit.html" />
         <option value="$PROJECT_DIR$/Application/Admin/Model/GoodsModel.class.php" />
       </list>
     </option>
@@ -148,7 +149,8 @@
   </component>
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
   <component name="ProjectFrameBounds">
-    <option name="x" value="710" />
+    <option name="x" value="708" />
+    <option name="y" value="1" />
     <option name="width" value="1210" />
     <option name="height" value="1040" />
   </component>
@@ -177,6 +179,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scratches" />
       <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
@@ -247,6 +250,32 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="View" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="shop" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="shop" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Application" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Admin" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="View" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Index" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
           </PATH>
@@ -348,7 +377,6 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -423,7 +451,8 @@
       <workItem from="1467684126688" duration="186000" />
       <workItem from="1467690467759" duration="1596000" />
       <workItem from="1467708066665" duration="15026000" />
-      <workItem from="1467765680455" duration="6758000" />
+      <workItem from="1467765680455" duration="8213000" />
+      <workItem from="1467862554067" duration="4529000" />
     </task>
     <task id="LOCAL-00001" summary="更改README.md文件。测试用PHPStorm使用Github">
       <created>1467691010291</created>
@@ -439,14 +468,21 @@
       <option name="project" value="LOCAL" />
       <updated>1467728949735</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="添加商品时候可以选择分类，根据分类搜索商品">
+      <created>1467786396631</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1467786396631</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="65640000" />
+    <option name="totallyTimeSpent" value="71624000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="710" y="0" width="1210" height="1040" extended-state="0" />
+    <frame x="708" y="1" width="1210" height="1040" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.21440536" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -483,7 +519,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="更改README.md文件。测试用PHPStorm使用Github" />
     <MESSAGE value="增加商品分类。树状无限级分类。" />
-    <option name="LAST_COMMIT_MESSAGE" value="增加商品分类。树状无限级分类。" />
+    <MESSAGE value="添加商品时候可以选择分类，根据分类搜索商品" />
+    <option name="LAST_COMMIT_MESSAGE" value="添加商品时候可以选择分类，根据分类搜索商品" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -715,13 +752,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Application/Admin/View/Index/menu.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2502">
-          <caret line="135" column="0" selection-start-line="135" selection-start-column="0" selection-end-line="135" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/README.md">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="36">
@@ -729,17 +759,57 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Application/Admin/View/Goods/edit.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1602">
-          <caret line="77" column="48" selection-start-line="77" selection-start-column="48" selection-end-line="77" selection-end-column="48" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/db.sql">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="392">
           <caret line="28" column="23" selection-start-line="28" selection-start-column="23" selection-end-line="28" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="25" column="22" selection-start-line="25" selection-start-column="22" selection-end-line="25" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Application/Admin/View/Index/menu.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="492">
+          <caret line="131" column="65" selection-start-line="131" selection-start-column="65" selection-end-line="131" selection-end-column="65" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Application/Admin/View/Goods/lst.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="330">
+          <caret line="26" column="38" selection-start-line="26" selection-start-column="38" selection-end-line="26" selection-end-column="38" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Application/Admin/View/Category/lst.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="234">
+          <caret line="12" column="51" selection-start-line="12" selection-start-column="51" selection-end-line="12" selection-end-column="51" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Application/Admin/View/Category/add.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="648">
+          <caret line="34" column="33" selection-start-line="29" selection-start-column="24" selection-end-line="34" selection-end-column="33" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Application/Admin/Controller/CategoryController.class.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="537">
+          <caret line="71" column="8" selection-start-line="71" selection-start-column="8" selection-end-line="71" selection-end-column="8" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -753,66 +823,34 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Application/Admin/View/Category/lst.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="504">
-          <caret line="28" column="89" selection-start-line="28" selection-start-column="89" selection-end-line="28" selection-end-column="89" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/index.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="25" column="22" selection-start-line="25" selection-start-column="22" selection-end-line="25" selection-end-column="22" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Application/Admin/Controller/CategoryController.class.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1278">
-          <caret line="71" column="8" selection-start-line="71" selection-start-column="8" selection-end-line="71" selection-end-column="8" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Application/Admin/View/Category/edit.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
+        <state relative-caret-position="360">
           <caret line="25" column="62" selection-start-line="25" selection-start-column="62" selection-end-line="25" selection-end-column="62" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Application/Admin/View/Category/add.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="468">
-          <caret line="34" column="33" selection-start-line="29" selection-start-column="24" selection-end-line="34" selection-end-column="33" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Application/Admin/View/Goods/add.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="465">
-          <caret line="43" column="41" selection-start-line="38" selection-start-column="32" selection-end-line="43" selection-end-column="41" />
+        <state relative-caret-position="2142">
+          <caret line="119" column="7" selection-start-line="115" selection-start-column="4" selection-end-line="119" selection-end-column="7" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Application/Admin/View/Goods/edit.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="450">
+          <caret line="48" column="63" selection-start-line="48" selection-start-column="63" selection-end-line="48" selection-end-column="63" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Application/Admin/Controller/GoodsController.class.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="30" column="11" selection-start-line="30" selection-start-column="11" selection-end-line="30" selection-end-column="11" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Application/Admin/View/Goods/lst.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="330">
-          <caret line="26" column="38" selection-start-line="26" selection-start-column="38" selection-end-line="26" selection-end-column="38" />
+        <state relative-caret-position="1563">
+          <caret line="87" column="21" selection-start-line="87" selection-start-column="21" selection-end-line="87" selection-end-column="21" />
           <folding />
         </state>
       </provider>
@@ -820,7 +858,7 @@
     <entry file="file://$PROJECT_DIR$/Application/Admin/Model/GoodsModel.class.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="249">
-          <caret line="100" column="33" selection-start-line="100" selection-start-column="33" selection-end-line="100" selection-end-column="33" />
+          <caret line="169" column="33" selection-start-line="169" selection-start-column="33" selection-end-line="169" selection-end-column="33" />
           <folding />
         </state>
       </provider>
