@@ -17,15 +17,21 @@ class CategoryController extends Controller{
                     // 5.success方法不会马上跳转，会继承执行后面的代码，我们这里要终止后面的代码
                     exit;
                 }
-                // 如果失败，获取失败原因
-                $error = $model->getError();
-                // 显示苦脸和错误信息，3秒之后返回上一页面
-                $this->error($error);
             }
+            // 如果失败，获取失败原因
+            $error = $model->getError();
+            // 显示苦脸和错误信息，3秒之后返回上一页面
+            $this->error($error);
         }
         // 取出所有分类
         $data = $model->getTree();
         $this->assign('data', $data);
+        // 设置页面的信息
+        $this->assign(array(
+            '_page_title' => '添加分类',
+            '_page_btn_name' => '分类列表',
+            '_page_btn_link' => 'lst',
+        ));
         // 显示表单
         $this->display();
     }
@@ -39,6 +45,12 @@ class CategoryController extends Controller{
 //        print_r($data);
 //        echo '</pre>';
 //        die;
+        // 设置页面的信息
+        $this->assign(array(
+            '_page_title' => '分类列表',
+            '_page_btn_name' => '添加分类',
+            '_page_btn_link' => 'add',
+        ));
         $this->display();
     }
     // 商品的删除
@@ -79,6 +91,12 @@ class CategoryController extends Controller{
             'info' => $info,
             'data' => $data,
             'children' => $children,
+        ));
+        // 设置页面的信息
+        $this->assign(array(
+            '_page_title' => '修改分类',
+            '_page_btn_name' => '分类列表',
+            '_page_btn_link' => 'lst',
         ));
         $this->display();
     }

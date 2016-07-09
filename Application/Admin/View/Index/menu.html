@@ -133,7 +133,14 @@ body {
                     <li class="menu-item"><a href="goodsTrash.html" target="main-frame">商品回收站</a></li>
                 </ul>
             </li>
-
+            <li class="explode" key="04_order" name="menu">
+            RBAC
+                <ul>
+                    <li class="menu-item"><a href="<?php echo U('Admin/Privilege/lst'); ?>" target="main-frame">权限管理</a></li>
+                    <li class="menu-item"><a href="<?php echo U('Admin/Role/lst'); ?>" target="main-frame">角色管理</a></li>
+                    <li class="menu-item"><a href="<?php echo U('Admin/Admin/lst'); ?>" target="main-frame">管理员列表</a></li>
+                </ul>
+            </li>
             <li class="explode" key="04_order" name="menu">
             订单管理
                 <ul>

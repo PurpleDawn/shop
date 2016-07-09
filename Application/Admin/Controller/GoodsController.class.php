@@ -17,17 +17,23 @@ class GoodsController extends Controller{
                     // 5.success方法不会马上跳转，会继承执行后面的代码，我们这里要终止后面的代码
                     exit;
                 }
-                // 如果失败，获取失败原因
-                $error = $model->getError();
-                // 显示苦脸和错误信息，3秒之后返回上一页面
-                $this->error($error);
             }
+            // 如果失败，获取失败原因
+            $error = $model->getError();
+            // 显示苦脸和错误信息，3秒之后返回上一页面
+            $this->error($error);
         }
         // 取出所有商品分类
         $catModel = D('Category');
         $catData = $catModel->getTree();
         $this->assign(array(
             'catData' => $catData,
+        ));
+        // 设置页面的信息
+        $this->assign(array(
+            '_page_title' => '添加商品',
+            '_page_btn_name' => '商品列表',
+            '_page_btn_link' => 'lst',
         ));
         // 显示表单
         $this->display();
@@ -45,6 +51,12 @@ class GoodsController extends Controller{
             'catData' => $catData,
             'data' => $data['data'],
             'page' => $data['page'],
+        ));
+        // 设置页面的信息
+        $this->assign(array(
+            '_page_title' => '商品列表',
+            '_page_btn_name' => '添加商品',
+            '_page_btn_link' => 'add',
         ));
         $this->display();
     }
@@ -91,6 +103,12 @@ class GoodsController extends Controller{
             'catId' => $catId,
             'catData' => $catData,
             'info' => $info,
+        ));
+        // 设置页面的信息
+        $this->assign(array(
+            '_page_title' => '修改商品',
+            '_page_btn_name' => '商品列表',
+            '_page_btn_link' => 'lst',
         ));
         $this->display();
     }

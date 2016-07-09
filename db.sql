@@ -48,3 +48,54 @@ CREATE TABLE shop_goods_cat
     KEY (goods_id),
     KEY (cat_id)
 )ENGINE=MyISAM DEFAULT CHARSET=utf8 COMMENT '商品分类';
+
+/************************ RBAC ***********************/
+DROP TABLE IF EXISTS shop_privilege;
+CREATE TABLE shop_privilege
+(
+    id SMALLINT UNSIGNED NOT NULL  AUTO_INCREMENT COMMENT 'Id',
+    pri_name VARCHAR(30) NOT NULL COMMENT '权限名称',
+    module_name VARCHAR(30) NOT NULL COMMENT '模块名称',
+    controller_name VARCHAR(30) NOT NULL COMMENT '控制器名称',
+    action_name VARCHAR(30) NOT NULL COMMENT '方法名称',
+    parent_id SMALLINT UNSIGNED NOT NULL DEFAULT '0' COMMENT '上级权限的ID，0：顶级权限',
+    sort_num TINYINT UNSIGNED NOT NULL DEFAULT '100' COMMENT '排序用的数字',
+    PRIMARY KEY (id)
+)ENGINE=MyISAM DEFAULT CHARSET=utf8 COMMENT '权限';
+
+DROP TABLE IF EXISTS shop_role_pri;
+CREATE TABLE shop_role_pri
+(
+    pri_id SMALLINT UNSIGNED NOT NULL COMMENT '权限id',
+    role_id TINYINT UNSIGNED NOT NULL COMMENT '角色id',
+    key pri_id(pri_id),
+    key role_id(role_id)
+)ENGINE=MyISAM DEFAULT CHARSET=utf8 COMMENT '角色权限';
+
+DROP TABLE IF EXISTS shop_role;
+CREATE TABLE shop_role
+(
+    id TINYINT UNSIGNED NOT NULL AUTO_INCREMENT COMMENT 'Id',
+    role_name VARCHAR(30) NOT NULL COMMENT '角色名称',
+    PRIMARY KEY (id)
+)ENGINE=MyISAM DEFAULT CHARSET=utf8 COMMENT '角色';
+
+DROP TABLE IF EXISTS shop_admin_role;
+CREATE TABLE shop_admin_role
+(
+    role_id TINYINT UNSIGNED NOT NULL COMMENT '角色id',
+    admin_id TINYINT UNSIGNED NOT NULL COMMENT '管理员id',
+    KEY role_id(role_id),
+    KEY admin_id(admin_id)
+)ENGINE=MyISAM DEFAULT CHARSET=utf8 COMMENT '管理员角色';
+
+DROP TABLE IF EXISTS shop_admin;
+CREATE TABLE shop_admin
+(
+    id TINYINT UNSIGNED NOT NULL AUTO_INCREMENT COMMENT 'Id',
+    username VARCHAR(30) NOT NULL COMMENT '账号',
+    password CHAR(32) NOT NULL COMMENT '密码',
+    is_deny ENUM('是','否') NOT NULL DEFAULT '否' COMMENT '是否禁用',
+    PRIMARY KEY (id)
+)ENGINE=MyISAM DEFAULT CHARSET=utf8 COMMENT '管理员';
+INSERT INTO shop_admin VALUES (1,'root','63a9f0ea7bb98050796b649e85481845','否');

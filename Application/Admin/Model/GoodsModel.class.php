@@ -33,35 +33,17 @@ class GoodsModel extends Model{
         $data['is_best'] = I('post.is_best', '否');
         /******************* 如果用户上传了图片就先上传图片，把上传之后的照片路径填写到表单中 ***************/
         if($_FILES['logo']['error'] == 0){
-            $upload = new \Think\Upload(array(
-                'rootPath' => './Public/Uploads/',
-                'exts' => array('gif', 'png', 'jpg', 'jpeg'),
-                'maxsize' => 2 * 1024 * 1024,
-                'savePath' => 'Goods/',
+            $ret = uploadOne('logo', 'Goods', array(
+                array(600, 600, 1),
+                array(130, 130, 1),
             ));
-            // 上传文件
-            $info = $upload->upload();
-            if (!$info){
-                // 先把错误信息传给模型，在控制器中会调用这个模型的getError方法$model->getError()并显示
-                // 原因：【模型只负责返回false，true，由控制器负责获取错误信息并显示】
-                $this->error = $upload->getError();
-                return FALSE;
+            if($ret['ok'] == 1){
+                $data['logo'] = $ret['images'][0]; // 原图路径
+                $data['mid_logo'] = $ret['images'][1]; // 第一个缩略图路径
+                $data['sm_logo'] = $ret['images'][2]; // 第二个缩略图路径
             }else{
-                // 获取原图上名称
-                $logo = $info['logo']['savepath'] . $info['logo']['savename'];
-                // 拼出缩略图的名称
-                $midlogo = $info['logo']['savepath'] . 'mid_' . $info['logo']['savename'];
-                $smlogo = $info['logo']['savepath'] . 'sm_' . $info['logo']['savename'];
-                /************* 生成两张缩略图 **************/
-                $image = new \Think\Image(); // 生成图片处理类的对象
-                $image->open('./Public/Uploads/' . $logo); // 打开刚刚上传的原图
-                // 第三个参数：缩略图的方法 1：按比例缩放，共六个参数
-                $image->thumb(650, 650, 1)->save('./Public/Uploads/' . $midlogo); // 生成中图
-                $image->thumb(130, 130, 1)->save('./Public/Uploads/' . $smlogo); // 生成小图
-                // 把图片路径放到表单中
-                $data['logo'] = $logo;
-                $data['mid_logo'] = $midlogo;
-                $data['sm_logo'] = $smlogo;
+                $this->error = $ret['error'];
+                return FALSE;
             }
         }
         // 用我们自己过滤的原始数据，覆盖掉表单中TP使用I函数过滤的
@@ -117,6 +99,15 @@ class GoodsModel extends Model{
                 // 如果没有满足条件的商品，就加一个不可能取出商品的条件
                 $where['id'] = array('eq', 0);
         }
+        // 根据时间搜索
+        $st = I('get.st');
+        $et = I('get.et');
+        if($st && $et)
+            $where['addtime'] = array('between', array(strtotime("$st 00:00:00"), strtotime("$et 23:59:59")));
+        elseif($st)
+            $where['addtime'] = array('egt', strtotime("$st 00:00:00"));
+        elseif($et)
+            $where['addtime'] = array('elt', strtotime("$et 23:59:59"));
         /*************************** 构造翻页用的 limit 变量 ****************************/
         // 取出总的记录数
         $count = $this->where($where)->count();
@@ -151,9 +142,7 @@ class GoodsModel extends Model{
     protected function _before_delete($option){
         // 根据商品ID取出商品图片的路径
         $logo = $this->field('logo,sm_logo,mid_logo')->find($option['where']['id']);
-        unlink('./Public/Uploads/'.$logo['logo']);
-        unlink('./Public/Uploads/'.$logo['sm_logo']);
-        unlink('./Public/Uploads/'.$logo['mid_logo']);
+        deleteImage($logo);// 调用自定义函数删除所有图片
         // 删除商品时，将其所对应的商品分类数据也删除
         $gcModel = D('GoodsCat');
         $gcModel->where(array(
